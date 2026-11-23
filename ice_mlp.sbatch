@@ -11,8 +11,10 @@
 #SBATCH -o mlp_%j.out
 
 cd "$SLURM_SUBMIT_DIR"
-module load r            # if this fails, run `module avail r` and load the listed version
+module load r            # R is only available on compute nodes on ICE
 export MLP_CORES=$SLURM_CPUS_PER_TASK
 export R_LIBS_USER="$HOME/R/library"
 
+ls data/bottle.csv data/cast.csv || { echo "Copy bottle.csv and cast.csv into data/ first"; exit 1; }
+Rscript setup_r_packages.R || exit 1   # installs only packages the module lacks
 Rscript mlp_addon.R

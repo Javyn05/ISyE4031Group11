@@ -1,4 +1,5 @@
-# One-time setup on ICE (run on the LOGIN node, which has internet):
+# Installs any missing R packages. On ICE this runs automatically inside ice_mlp.sbatch
+# (R is only available on compute nodes). Locally:
 #   module load r
 #   Rscript setup_r_packages.R
 lib <- file.path(Sys.getenv("HOME"), "R", "library")   # same path ice_mlp.sbatch uses

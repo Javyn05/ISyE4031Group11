@@ -31,8 +31,8 @@ On PACE ICE:
 
 ```
 git clone https://github.com/Javyn05/ISyE4031Group11.git && cd ISyE4031Group11
-scp bottle.csv cast.csv <gt-username>@login-ice.pace.gatech.edu:~/ISyE4031Group11/data/   # from your laptop
-module load r && Rscript setup_r_packages.R    # once, on the login node
+scp bottle.csv cast.csv YOUR_GT_USERNAME@login-ice.pace.gatech.edu:~/ISyE4031Group11/data/   # run on your laptop
+# (packages install automatically inside the job; R only loads on compute nodes)
 sbatch ice_mlp.sbatch
 ```
 
