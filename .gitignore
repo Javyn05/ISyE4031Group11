@@ -1,0 +1,6 @@
+# CalCOFI data is too large for GitHub (bottle.csv is ~257 MB); put it in data/ locally
+data/*.csv
+.Rhistory
+.RData
+.Rproj.user/
+mlp_*.out
